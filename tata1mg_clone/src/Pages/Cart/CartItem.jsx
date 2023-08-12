@@ -53,7 +53,7 @@ const CartItem = ({ id,image,price,quantity,rating,name,total_purchase,actual_pr
         <Flex marginTop="30px">
           <Select
             size="sm"
-            maxW="80px"
+            maxW="100px"
             borderRadius="3px"
             marginRight="20px"
             value={quantity}

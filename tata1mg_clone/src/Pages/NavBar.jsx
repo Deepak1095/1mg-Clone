@@ -8,7 +8,7 @@ import {
   Divider,
   Button,
 } from "@chakra-ui/react";
-import {Link as ReactLink} from "react-router-dom"
+import { Link as ReactLink } from "react-router-dom"
 import Logo from "../image/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
@@ -17,16 +17,16 @@ import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import { useSelector } from "react-redux";
 const navlink = [
-  { title: "MEDICINES", link: "" },
-  { title: "LAB TESTS", link: "" },
-  { title: "CONSULT DOCTORS", link: "" },
-  { title: "COVID-19", link: "" },
-  { title: "AYURVEDA", link: "" },
-  { title: "CARE PLAN", link: "" },
+  { title: "MEDICINES", link: "/vitamins" },
+  { title: "AYURVEDA", link: "/ayurveda_medicine" },
+  { title: "LAB TESTS", link: "/" },
+  { title: "CONSULT DOCTORS", link: "/" },
+  { title: "COVID-19", link: "/" },
+  { title: "CARE PLAN", link: "/" },
 ];
 
 export default function NavBar() {
-  const cart=useSelector(store=>store.CartReducer.cart)
+  const cart = useSelector(store => store.CartReducer.cart)
   return (
     <>
       <Box px={0}>
@@ -46,16 +46,16 @@ export default function NavBar() {
             <HStack spacing={5}>
               {navlink.map((item, id) => {
                 return (
-                  <Link
+                  <Box
                     key={id}
-                    to={item.link}
                     style={{
                       fontWeight: "600",
                       textDecoration: "none",
                     }}
                     _hover={{ color: "#fe6f60" }}>
-                    {item.title}
-                  </Link>
+                    <ReactLink to={item.link}
+                    > {item.title}</ReactLink>
+                  </Box>
                 );
               })}
             </HStack>
@@ -73,7 +73,7 @@ export default function NavBar() {
               <Link>Offers</Link>
               <ReactLink fontSize={"16px"} to="/cart">
                 <FontAwesomeIcon icon={faCartShopping} />
-                <span style={{color:"green",textDecoration:"none"}}>{cart.length}</span>
+                <span style={{ color: "green", textDecoration: "none" }}>{cart.length}</span>
               </ReactLink>
             </Flex>
             <Flex ml={5}>

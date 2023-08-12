@@ -4,28 +4,28 @@ import { Product_REQUEST_FAILURE,Product_REQUEST_PENDING,Vitamins_REQUEST_SUCCES
 
 export const VitaminsData=(params)=>(dispatch)=>{
     dispatch({type:Product_REQUEST_PENDING})
-    axios.get(`https://quaint-fawn-dungarees.cyclic.app/vitamins`,params)
+    axios.get(`${process.env.REACT_APP_URL}/vitamins`,params)
     .then((res)=>dispatch({type:Vitamins_REQUEST_SUCCESS,payload:res.data}))
     .catch((err)=>dispatch({type:Product_REQUEST_FAILURE}))
 }
 
 export const SkinCare=(params)=>(dispatch)=>{
     dispatch({type:Product_REQUEST_PENDING})
-    axios.get(`https://quaint-fawn-dungarees.cyclic.app/skin_care`,params)
+    axios.get(`${process.env.REACT_APP_URL}/skin_care`,params)
     .then((res)=>dispatch({type:SkinCare_REQUEST_SUCCESS,payload:res.data}))
     .catch((err)=>dispatch({type:Product_REQUEST_FAILURE}))
 }
 
 export const Supplements=(params)=>(dispatch)=>{
     dispatch({type:Product_REQUEST_PENDING})
-    axios.get(`https://quaint-fawn-dungarees.cyclic.app/supplements`,params)
+    axios.get(`${process.env.REACT_APP_URL}/supplements`,params)
     .then((res)=>dispatch({type:Supplements_REQUEST_SUCCESS,payload:res.data}))
     .catch((err)=>dispatch({type:Product_REQUEST_FAILURE}))
 }
 
 export const Ayurveda=(params)=>(dispatch)=>{
     dispatch({type:Product_REQUEST_PENDING})
-    axios.get(`https://quaint-fawn-dungarees.cyclic.app/ayurveda_medicine`,params)
+    axios.get(`${process.env.REACT_APP_URL}/ayurveda_medicine`,params)
     .then((res)=>dispatch({type:Ayurveda_REQUEST_SUCCESS,payload:res.data}))
     .catch((err)=>dispatch({type:Product_REQUEST_FAILURE}))
 }

@@ -30,7 +30,7 @@ export const SingleProductPage = () => {
     const [pageName,Id]=location.pathname.split("/:")
     console.log(pageName,"d",Id)
     useEffect(() => {
-        axios.get(`https://quaint-fawn-dungarees.cyclic.app/${pageName}/${Id}`)
+        axios.get(`${process.env.REACT_APP_URL}${pageName}/${Id}`)
             .then((res) =>setData(res.data))
     }, [])
 

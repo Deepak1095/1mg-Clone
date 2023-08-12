@@ -15,22 +15,22 @@ export default function LandingPage() {
       <HealthConcernCarouselCard />
       <FeauredBrands />
       <GenericCarousel
-        url={`https://quaint-fawn-dungarees.cyclic.app/vitamins`}
+        url={`${process.env.REACT_APP_URL}/vitamins`}
         heading={`Vitamins`}
         link="vitamins"
       />
       <GenericCarousel
-        url={`https://quaint-fawn-dungarees.cyclic.app/supplements`}
+        url={`${process.env.REACT_APP_URL}/supplements`}
         heading={`Supplements`}
         link="supplements"
       />{" "}
       <GenericCarousel
-        url={`https://quaint-fawn-dungarees.cyclic.app/skin_care`}
+        url={`${process.env.REACT_APP_URL}/skin_care`}
         heading={`Skin care`}
         link="skin_care"
       />
       <GenericCarousel
-        url={`https://quaint-fawn-dungarees.cyclic.app/ayurveda_medicine`}
+        url={`${process.env.REACT_APP_URL}/ayurveda_medicine`}
         heading={`Ayurveda`}
         link="ayurveda_medicine"
       />{" "}

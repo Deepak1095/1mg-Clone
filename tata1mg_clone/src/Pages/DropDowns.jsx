@@ -63,36 +63,23 @@ export default function DropDowns() {
       {" "}
       <Box py={1}>
         <Flex gap={10} justifyContent={"center"}>
-          <Menu>
+        <Menu>
             {({ isOpen }) => (
               <>
                 <MenuButton fontSize={"12px"} rightIcon={<ChevronDownIcon />}>
-                  Health Resource Center
-                </MenuButton>
-                <MenuList fontSize={"12px"}>
-                  {dropDown1.map((item, id) => {
-                    return <MenuCompo key={id} {...item} />;
-                  })}
-                </MenuList>
-              </>
-            )}
-          </Menu>
-          <Menu>
-            {({ isOpen }) => (
-              <>
-                <MenuButton fontSize={"12px"} rightIcon={<ChevronDownIcon />}>
-                <Link to="/vitamins" >  Vitamins & Nutrition </Link>
+                  Vitamins & Nutrition
                 </MenuButton>
 
                 <MenuList fontSize={"12px"} p={0}>
                   <Text px={1} fontWeight={600} py={2} fontSize="12px">
                    
-                    Vitamins & Supplements
+                   Vitamins & Supplements
                   </Text>
                   {dropDown2.Vitamins_Supplements.map((item, id) => {
                     return (
                       <>
-                        <MenuCompo key={id} {...item} />
+                       <Link to="/vitamins" > <MenuCompo key={id} {...item} />
+                       </Link>
                       </>
                     );
                   })}
@@ -105,6 +92,20 @@ export default function DropDowns() {
                         <MenuCompo key={id} {...item} />
                       </>
                     );
+                  })}
+                </MenuList>
+              </>
+            )}
+          </Menu>
+          <Menu>
+            {({ isOpen }) => (
+              <>
+                <MenuButton fontSize={"12px"} rightIcon={<ChevronDownIcon />}>
+                  Health Resource Center
+                </MenuButton>
+                <MenuList fontSize={"12px"}>
+                  {dropDown1.map((item, id) => {
+                    return <MenuCompo key={id} {...item} />;
                   })}
                 </MenuList>
               </>
